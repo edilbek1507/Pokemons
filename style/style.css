@@ -1,0 +1,149 @@
+body {
+  background-image: url("https://wallscloud.net/img/resize/1920/1080/MM/2016-09-30-pikachu-and-friends-pokemon-Gv7L.jpg");
+}
+.pokemon-list {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+.name {
+  margin-top: 10px;
+  font-size: 30px;
+  text-transform: capitalize;
+  color: aliceblue;
+}
+.card {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 15px;
+  margin-top: 100px;
+}
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(
+    120deg,
+    rgb(43, 155, 199) 30%,
+    rgb(72, 233, 147) 88%,
+    bisque 40%,
+    rgba(0, 177, 221, 0.807) 78%
+  );
+  color: coral;
+}
+
+.flip-card-back {
+  background: linear-gradient(
+    120deg,
+    rgb(43, 155, 199) 30%,
+    rgb(72, 233, 147) 88%,
+    bisque 40%,
+    rgba(221, 33, 0, 0.807) 78%
+  );
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.header {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #ead63e;
+  --fs-size: 6em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
